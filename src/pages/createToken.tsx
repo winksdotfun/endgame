@@ -119,7 +119,7 @@ const CreateToken = () => {
 
     if (currentStep === 0) {
       if (!isHexadecimal(contractSuffix)) {
-        alert("Contract suffix must be a valid hexadecimal value.");
+        alert("Address suffix must be a valid hexadecimal value.");
         return;
       }
     }
@@ -200,7 +200,7 @@ const CreateToken = () => {
                       </p>
                       <p className="font-medium text-white">{tokenSymbol}</p>
                       <p className="text-sm text-gray-400 mt-3 mb-1">
-                        Contract Address:
+                        Personalized Token Address:
                       </p>
                       <p className="font-mono text-xs text-white break-all">
                         {tokenAddress}
@@ -334,7 +334,7 @@ const CreateToken = () => {
                           htmlFor="contractSuffix"
                           className="block text-sm font-medium text-gray-300 mb-1"
                         >
-                          Contract Address Suffix
+                          Token Address Suffix
                         </label>
                         <Input
                           id="contractSuffix"
@@ -384,7 +384,7 @@ const CreateToken = () => {
                         )}
 
                         <p className="mt-1 text-xs text-gray-400">
-                          This will be appended to your contract address for
+                          This will be appended to your token address for
                           easy identification
                         </p>
                       </div>
