@@ -17,6 +17,7 @@ const CreateWallet = () => {
   const [suggestion, setSuggestion] = useState<string[]>([]);
   const [txnHash, setTxnHash] = useState("");
   const [walletAddress, setWalletAddress] = useState("");
+  const [privateKey, setPrivateKey] = useState("");
 
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -92,8 +93,8 @@ const CreateWallet = () => {
         setIsSuccess(true);
         const data = await response.json();
         console.log("Wallet generation successful:", data);
-        setWalletAddress(data.walletAddress);
-        setIsProcessing(false)
+        setWalletAddress(data.address);
+        setPrivateKey(data.privateKey);
         setTxnHash(tx);
       } catch (error) {
         console.error("Error generating wallet:", error);
@@ -116,6 +117,7 @@ const CreateWallet = () => {
     setErrorMessage("");
     setTxnHash("");
     setWalletAddress("");
+    setPrivateKey("");
   };
 
   return (
@@ -150,13 +152,40 @@ const CreateWallet = () => {
                     <h3 className="text-2xl font-bold text-white">
                       Successfully Created!
                     </h3>
-                    <div className="mt-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                      <p className="text-sm text-gray-400 mt-3 mb-1">
-                        Your Personalized Wallet Address:
-                      </p>
-                      <p className="font-mono text-xs text-white break-all">
-                        {walletAddress}
-                      </p>
+                    <div className="mt-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700 space-y-4">
+                      <div>
+                        <div className="flex items-center justify-between mb-1">
+                          <p className="text-sm text-gray-400">Wallet Address:</p>
+                          <Button
+                            onClick={() => {
+                              navigator.clipboard.writeText(walletAddress);
+                            }}
+                            className="h-8 px-2 text-xs bg-gray-700 hover:bg-gray-600"
+                          >
+                            Copy
+                          </Button>
+                        </div>
+                        <p className="font-mono text-xs text-white break-all bg-gray-900/50 p-2 rounded">
+                          {walletAddress}
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <div className="flex items-center justify-between mb-1">
+                          <p className="text-sm text-gray-400">Private Key:</p>
+                          <Button
+                            onClick={() => {
+                              navigator.clipboard.writeText(privateKey);
+                            }}
+                            className="h-8 px-2 text-xs bg-gray-700 hover:bg-gray-600"
+                          >
+                            Copy
+                          </Button>
+                        </div>
+                        <p className="font-mono text-xs text-white break-all bg-gray-900/50 p-2 rounded">
+                          {privateKey}
+                        </p>
+                      </div>
                     </div>
                   </div>
                   <Button

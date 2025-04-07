@@ -163,9 +163,6 @@ const CreateToken = () => {
   return (
     <div className="">
       <section className="relative min-h-screen flex items-center justify-center py-20 bg-gradient-to-bl from-black via-black to-gray-500 rounded-b-[10px]">
-        {/* <div className="absolute top-5 right-5">
-          <WalletConnect />
-        </div> */}
         <div className="container px-4 ">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-white">
