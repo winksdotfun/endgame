@@ -42,7 +42,7 @@ const CustomButton = () => {
                 return (
                   <>
                     <Button
-                      className="w-fit text-xl p-6 px-8 bg-gray-600 hover:bg-gray-700"
+                      className="w-fit p-3 px-8 bg-gray-600 hover:bg-gray-700"
                       onClick={openConnectModal}
                       type="button"
                     >
@@ -56,7 +56,7 @@ const CustomButton = () => {
                 return (
                   <>
                     <Button
-                      className=" w-fit text-xl p-6 px-8 bg-red-500 hover:bg-red-600"
+                      className=" w-fit p-3 px-8 bg-red-500 hover:bg-red-600"
                       onClick={openChainModal}
                       type="button"
                     >
@@ -69,7 +69,7 @@ const CustomButton = () => {
               return (
                 <div className="">
                   <Button
-                    className="w-fit text-xl p-6 px-8 bg-gray-600 hover:bg-gray-700"
+                    className="w-fit p-3 px-8 bg-gray-600 hover:bg-gray-700"
                     onClick={openAccountModal}
                     type="button"
                   >
